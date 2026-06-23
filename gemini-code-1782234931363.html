@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Handora | Feed</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                    "primary": "#630ed4",
+                    "surface-container": "#eaedff",
+                    "on-surface": "#131b2e",
+                    "on-surface-variant": "#4a4455"
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-[#faf8ff] text-on-surface font-sans antialiased flex justify-center min-h-screen">
+    <div class="w-full max-w-[440px] bg-[#faf8ff] min-h-screen border-x border-surface-container/40 flex flex-col pb-20">
+        <nav class="sticky top-0 bg-white/80 backdrop-blur-md z-40 px-4 py-3.5 border-b border-surface-container/40 flex items-center justify-between">
+            <span class="font-headline-lg text-lg font-extrabold tracking-tight bg-gradient-to-r from-primary to-purple-600 bg-clip-text text-transparent">Handora</span>
+            <div class="flex space-x-2">
+                <button class="w-9 h-9 rounded-full bg-surface-container/40 flex items-center justify-center text-on-surface"><span class="material-symbols-outlined text-[20px]">notifications</span></button>
+            </div>
+        </nav>
+
+        <main class="p-4 space-y-4">
+            <article class="bg-white rounded-3xl overflow-hidden border border-surface-container/60 shadow-sm transition-all duration-500">
+                <div class="p-4 flex items-center space-x-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" class="w-9 h-9 rounded-full object-cover"/>
+                    <div>
+                        <h4 class="text-xs font-bold">Sophia Martinez</h4>
+                        <p class="text-[10px] text-on-surface-variant">4 hours ago</p>
+                    </div>
+                </div>
+                <div class="aspect-square bg-surface-container">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"/>
+                </div>
+                <div class="p-4 space-y-2">
+                    <p class="text-xs text-on-surface-variant leading-relaxed">Desk setup optimization completed. Replaced old frameworks with modern Tailwind configurations.</p>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.05 });
+
+        document.querySelectorAll('article').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(15px)';
+            el.style.transition = 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

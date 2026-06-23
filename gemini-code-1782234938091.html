@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Handora | Social Hub & Analytics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+                    "primary": "#630ed4",
+                    "surface-container-low": "#f2f3ff",
+                    "surface-container-high": "#e2e7ff",
+                    "on-surface": "#131b2e",
+                    "on-surface-variant": "#4a4455"
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-[#faf8ff] text-on-surface font-sans antialiased min-h-screen">
+    <div class="max-w-[1240px] mx-auto p-4 md:p-8 space-y-8">
+        <header class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-surface-container-high/40 pb-6">
+            <div>
+                <h1 class="font-headline-lg text-2xl font-extrabold tracking-tight">Creator Insights</h1>
+                <p class="text-sm text-on-surface-variant">Real-time engagement optimization breakdown</p>
+            </div>
+            <div class="flex items-center space-x-3">
+                <div class="bg-white px-4 py-2 rounded-xl border border-surface-container-high/60 shadow-sm text-sm font-medium">Last 30 Days</div>
+            </div>
+        </header>
+
+        <main class="space-y-6">
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-white p-5 rounded-2xl border border-surface-container-high/60 shadow-sm flex items-center justify-between">
+                    <div class="space-y-1">
+                        <p class="text-xs text-on-surface-variant font-medium">Total Impressions</p>
+                        <h3 class="text-2xl font-extrabold tracking-tight">842.6k</h3>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary"><span class="material-symbols-outlined">monitoring</span></div>
+                </div>
+                <div class="bg-white p-5 rounded-2xl border border-surface-container-high/60 shadow-sm flex items-center justify-between">
+                    <div class="space-y-1">
+                        <p class="text-xs text-on-surface-variant font-medium">Net Growth</p>
+                        <h3 class="text-2xl font-extrabold tracking-tight">+14.2%</h3>
+                    </div>
+                    <div class="w-12 h-12 rounded-xl bg-green-500/10 flex items-center justify-center text-green-600"><span class="material-symbols-outlined">trending_up</span></div>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-3xl border border-surface-container-high/60 shadow-sm space-y-4">
+                <h3 class="text-sm font-bold">Engagement Velocity Distribution</h3>
+                <div class="h-48 flex items-end justify-between gap-2 pt-6 px-2 border-b border-surface-container-low">
+                    <div class="w-full bg-primary/20 hover:bg-primary rounded-t-lg transition-all chart-bar" style="height: 60%"></div>
+                    <div class="w-full bg-primary/20 hover:bg-primary rounded-t-lg transition-all chart-bar" style="height: 85%"></div>
+                    <div class="w-full bg-primary/20 hover:bg-primary rounded-t-lg transition-all chart-bar" style="height: 45%"></div>
+                    <div class="w-full bg-primary/20 hover:bg-primary rounded-t-lg transition-all chart-bar" style="height: 95%"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.chart-bar').forEach(bar => {
+                const height = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => { bar.style.height = height; }, 150);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Handora | Snapshots</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+</head>
+<body class="bg-neutral-900 text-white font-sans antialiased min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-[420px] h-[calc(100vh-20px)] md:h-[840px] bg-black rounded-3xl relative overflow-hidden shadow-2xl flex flex-col border border-neutral-800">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover" alt="Snapshot content frame"/>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80"></div>
+        </div>
+
+        <header class="relative z-10 p-4 space-y-3">
+            <div class="w-full bg-white/20 h-1 rounded-full overflow-hidden">
+                <div class="bg-white h-full w-[75%] story-progress-fill transition-all duration-100"></div>
+            </div>
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=80&q=80" class="w-8 h-8 rounded-full object-cover border border-white/40"/>
+                    <span class="text-xs font-bold">Marcus_Vane</span>
+                </div>
+                <button class="text-white"><span class="material-symbols-outlined">more_vert</span></button>
+            </div>
+        </header>
+
+        <div class="absolute right-4 bottom-24 z-10 flex flex-col items-center space-y-5">
+            <button class="favorite-trigger flex flex-col items-center group">
+                <div class="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-white transition-colors">favorite</span>
+                </div>
+                <span class="text-[11px] font-bold mt-1.5 drop-shadow">42.7k</span>
+            </button>
+            <button class="flex flex-col items-center group">
+                <div class="w-12 h-12 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center border border-white/10 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined">chat_bubble</span>
+                </div>
+                <span class="text-[11px] font-bold mt-1.5 drop-shadow">892</span>
+            </button>
+        </div>
+
+        <footer class="mt-auto relative z-10 p-5 space-y-2">
+            <p class="text-sm font-medium leading-relaxed drop-shadow">Behind the scenes drafting the production UI layout configurations for Handora’s analytical workspace. 💻✨</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelectorAll('.favorite-trigger').forEach(trigger => {
+            trigger.addEventListener('click', function() {
+                const span = this.querySelector('span');
+                const isFilled = span.style.fontVariationSettings?.includes("'FILL' 1");
+                if (isFilled) {
+                    span.style.fontVariationSettings = "'FILL' 0";
+                    span.classList.remove('text-red-500');
+                } else {
+                    span.style.fontVariationSettings = "'FILL' 1";
+                    span.classList.add('text-red-500');
+                    this.classList.add('scale-125');
+                    setTimeout(() => this.classList.remove('scale-125'), 200);
+                }
+            });
+        });
+
+        let progress = 75;
+        const bar = document.querySelector('.story-progress-fill');
+        if (bar) {
+            setInterval(() => {
+                if (progress < 100) {
+                    progress += 0.2;
+                    bar.style.width = progress + '%';
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>

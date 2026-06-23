@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Handora | Vibrant Social</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1" rel="stylesheet"/>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#630ed4",
+                        "primary-container": "#7c3aed",
+                        "secondary": "#00687a",
+                        "secondary-container": "#57dffe",
+                        "background": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "surface-container": "#eaedff",
+                        "on-surface": "#131b2e",
+                        "on-surface-variant": "#4a4455",
+                        "outline": "#7b7487"
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-sans antialiased min-h-screen">
+    <div class="max-w-[1440px] mx-auto min-h-screen grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[280px_1fr_360px]">
+        
+        <aside class="hidden md:flex flex-col border-r border-surface-container/60 p-6 space-y-8 bg-white/50 backdrop-blur-md sticky top-0 h-screen">
+            <div class="flex items-center space-x-3 px-2">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary to-primary-container flex items-center justify-center text-white shadow-lg shadow-primary/20">
+                    <span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1">hub</span>
+                </div>
+                <span class="font-headline-md text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Handora</span>
+            </div>
+            
+            <nav class="flex-1 space-y-1.5">
+                <a href="#" class="flex items-center space-x-4 px-4 py-3 rounded-xl bg-primary/10 text-primary font-medium transition-all group">
+                    <span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform" style="font-variation-settings: 'FILL' 1">home</span>
+                    <span>Home Feed</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 px-4 py-3 rounded-xl hover:bg-surface-container/50 text-on-surface-variant hover:text-on-surface transition-all group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">explore</span>
+                    <span>Discovery</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 px-4 py-3 rounded-xl hover:bg-surface-container/50 text-on-surface-variant hover:text-on-surface transition-all group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">forum</span>
+                    <span>Messages</span>
+                </a>
+                <a href="#" class="flex items-center space-x-4 px-4 py-3 rounded-xl hover:bg-surface-container/50 text-on-surface-variant hover:text-on-surface transition-all group">
+                    <span class="material-symbols-outlined group-hover:scale-110 transition-transform">analytics</span>
+                    <span>Insights</span>
+                </a>
+            </nav>
+        </aside>
+
+        <main class="p-4 md:p-8 overflow-y-auto max-w-4xl mx-auto w-full">
+            <div class="mb-8 overflow-x-auto flex space-x-5 py-3 scrollbar-none snap-x cursor-grab active:cursor-grabbing">
+                <div class="flex flex-col items-center space-y-2 snap-start flex-shrink-0">
+                    <div class="relative group cursor-pointer">
+                        <div class="absolute -inset-0.5 bg-gradient-to-tr from-primary to-secondary rounded-full blur opacity-70 group-hover:opacity-100 transition duration-300"></div>
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Avatar" class="relative w-16 h-16 rounded-full border-2 border-white object-cover"/>
+                    </div>
+                    <span class="text-xs font-medium text-on-surface-variant">Your Story</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <article class="bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl border border-surface-container/40 transition-all group duration-300">
+                    <div class="p-4 flex items-center justify-between">
+                        <div class="flex items-center space-x-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&q=80" class="w-10 h-10 rounded-full object-cover" alt="User profile"/>
+                            <div>
+                                <h4 class="font-bold text-sm text-on-surface">Alex Rivers</h4>
+                                <p class="text-xs text-on-surface-variant">2 hours ago</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative overflow-hidden aspect-video bg-surface-container">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Feed Graphic"/>
+                    </div>
+                    <div class="p-5 space-y-3">
+                        <p class="text-sm text-on-surface-variant leading-relaxed">Catching the first rays of light from the west coast. Absolutely breathtaking horizons.</p>
+                        <div class="flex items-center space-x-6 text-on-surface-variant pt-2">
+                            <button class="like-btn flex items-center space-x-2 hover:text-primary transition-all">
+                                <span class="material-symbols-outlined text-[22px]">favorite</span>
+                                <span class="text-xs font-semibold">1.4k</span>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                const isLiked = icon.style.fontVariationSettings?.includes("'FILL' 1");
+                if(isLiked) {
+                    icon.style.fontVariationSettings = "'FILL' 0";
+                    icon.classList.remove('text-primary');
+                } else {
+                    icon.style.fontVariationSettings = "'FILL' 1";
+                    icon.classList.add('text-primary');
+                    this.classList.add('scale-110');
+                    setTimeout(() => this.classList.remove('scale-110'), 200);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
